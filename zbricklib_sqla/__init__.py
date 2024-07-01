@@ -6,7 +6,7 @@ from sqlalchemy import select, inspect
 from sqlalchemy.orm import DeclarativeBase, MappedAsDataclass
 from sqlalchemy.orm import Mapped, mapped_column
 
-class Base(DeclarativeBase):
+class Base(DeclarativeBase, MappedAsDataclass):
     pass
 
 class zSQLAlchemy(SQLAlchemy, zExtension):

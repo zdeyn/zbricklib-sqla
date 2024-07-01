@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "zbricklib-sqla"
-version = "0.1.0"
+version = "0.1.1"
 description = "Flask-SQLAlchemy wrapper for zbricklib"
 authors = ["zdeyn <zdeyn@zdeyn.com>"]
 readme = "README.md"

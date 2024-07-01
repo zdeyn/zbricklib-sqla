@@ -16,6 +16,8 @@ def test_can_install_into_app():
     sqla : zSQLAlchemy = zSQLAlchemy()
     sqla.init_app(app)
     assert app.extensions['sqla'] is sqla
+    # with app.app_context():
+    #     sqla.engine.echo = True
     
     class ExampleModel(Base):
         __tablename__ = 'example'
@@ -23,10 +25,10 @@ def test_can_install_into_app():
         name: Mapped[str] = mapped_column()
     
     with app.app_context():
-        # sqla.engine.echo = True
         sqla.create_all()
     
     # Check if the table for ExampleModel has been created
+    with app.app_context():        
         inspector = inspect(sqla.engine)
         tables = inspector.get_table_names()
         assert 'example' in tables
