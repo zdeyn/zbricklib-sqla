@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "zbricklib-sqla"
+version = "0.1.0"
+description = "Flask-SQLAlchemy wrapper for zbricklib"
+authors = ["zdeyn <zdeyn@zdeyn.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask-sqlalchemy = "^3.1.1"
+zbricklib = "^0.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
